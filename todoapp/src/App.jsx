@@ -15,7 +15,9 @@ function App() {
 
   function handleFormSubmit(e) {
     e.preventDefault()
-    setTodos([...todos, task])
+    if (task !== '') {
+      setTodos([...todos, task])
+    }
     setTask('')
   }
 
