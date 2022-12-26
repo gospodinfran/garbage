@@ -1,13 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Greet from './Greet'
 import TodoForm from './TodoForm'
 import ListMap from './ListMap'
 
 function App() {
-  const [name, setName] = useState('')
-  const [todos, setTodos] = useState([])
+  const [name, setName] = useState(() => localStorage.getItem('name') ?? '')
+  const [todos, setTodos] = useState(() => {
+    return JSON.parse(localStorage.getItem('todos')) 
+  })
   const [task, setTask] = useState('')
+
+  useEffect(() => {
+    localStorage.setItem('name', name)
+  }, [name])
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   function handleNameChange(e) {
     setName(e.target.value)
