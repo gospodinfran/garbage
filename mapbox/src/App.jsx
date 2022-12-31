@@ -2,7 +2,6 @@ import mapboxgl from 'mapbox-gl'
 import { useState, useEffect } from 'react'
 import './App.css'
 
-
 function App() {
   const [marker, setMarker] = useState()
 
