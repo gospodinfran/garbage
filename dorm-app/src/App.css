@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
+  color: darkgray;
+  margin: 0;
+}
+
+h2 {
+  font-size: 14px;
+  margin: 0;
+}
+
+h3 {
+  margin: 8px;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.container {
+  font-family: inherit;
+  position: relative;
+}
+
+.navbar {
+  background-color: rgb(35, 35, 35);
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.reservations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 5px 0;
+  border-top: 1px solid rgba(0, 0, 0, .05);
+}
+
+.dropdown-menu ul li:hover a{
+  cursor: pointer;
+  color: darkgray;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  background-color: blue;
+  border-radius: 8px;
+  padding: 5px 10px;
+  height: 60vh;
+  width: 100px;
+  font-size: small;
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  height: 15px;
+  width: 15px;
+  background: blue;
+  transform: rotate(45deg);
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transition: .4s ease;
+}
+
+.dropdown-menu.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: .4s ease;
+}
+
+.no-reservation p {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
