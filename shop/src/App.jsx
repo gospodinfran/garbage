@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import StoreFront from './StoreFront'
+<<<<<<< HEAD
+=======
+import Container from './Container'
+>>>>>>> master
 
 function App() {
   const [ loggedIn, setLoggedIn ] = useState(false)
@@ -31,7 +35,12 @@ function App() {
     <button onClick={() => setLoggedIn(prev => !prev)}>Log in</button>
   </div>)
 
+<<<<<<< HEAD
   return (<div className='cart'>
+=======
+  return (<Container>
+  <div className='cart'>
+>>>>>>> master
   <h2>Items in cart</h2>
   <ul>
     { cart.length > 0 && 
@@ -40,8 +49,15 @@ function App() {
     })
     }
   </ul>
+<<<<<<< HEAD
   { products && <StoreFront products={products} onAddToCart={handleAddToCart}/> }
   </div>)
+=======
+  </div>
+  { products && <StoreFront products={products} onAddToCart={handleAddToCart}/> }
+  </Container>
+  )
+>>>>>>> master
 }
 
 export default App
