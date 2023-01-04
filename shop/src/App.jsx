@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import StoreFront from './StoreFront'
+import Container from './Container'
 
 function App() {
   const [ loggedIn, setLoggedIn ] = useState(false)
@@ -31,7 +32,8 @@ function App() {
     <button onClick={() => setLoggedIn(prev => !prev)}>Log in</button>
   </div>)
 
-  return (<div className='cart'>
+  return (<Container>
+  <div className='cart'>
   <h2>Items in cart</h2>
   <ul>
     { cart.length > 0 && 
@@ -40,8 +42,10 @@ function App() {
     })
     }
   </ul>
+  </div>
   { products && <StoreFront products={products} onAddToCart={handleAddToCart}/> }
-  </div>)
+  </Container>
+  )
 }
 
 export default App
