@@ -1,4 +1,5 @@
 export default function Dropdown({ open }) {
+    
     return (<div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
         <h3>Options</h3>
         <ul>

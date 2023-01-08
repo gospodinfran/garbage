@@ -4,31 +4,38 @@ import Container from './Container'
 import Dropdown from './Dropdown'
 import Navbar from './Navbar'
 import Reservations from './Reservations'
-import ReservationsMap from './ReservationsMap'
+import useMapboxMap from './useMapboxMap'
+
 
 function App() {
   const [ menuOpen, setMenuOpen ] = useState(false)
   const [ reservations, setReservations ] = useState([])
 
+  useEffect(() => {
+    let title = ''
+    reservations.length > 0 
+    ? title = `${reservations.length} reservations`
+    : title = `Make a reservation`
+    document.title = title
+  }, [reservations])
+
+  useMapboxMap({
+    container: 'map'
+  })
+
   function handleDropdownClick() {
     setMenuOpen(!menuOpen)
 }
 
-  return (
+  return (<>
+    <Navbar onMenuOpen={handleDropdownClick}/>
     <Container>
-      <Navbar onMenuOpen={handleDropdownClick}/>
       <Dropdown open={menuOpen} />
-      <Reservations>
-        { reservations.length == 0 ? 
-        <div className='no-reservation'><p>You have no current reservations.</p>
-        <p>Make a reservation by going into available times and scheduling a reservation.</p>
-        </div>
-
-       : <ReservationsMap />}
-      </Reservations>
-
+      <Reservations reservations={reservations} />
+      <div id="map"></div>
     </Container>
-  )
+    
+    </>)
 }
 
 export default App

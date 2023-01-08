@@ -35,6 +35,11 @@ h3 {
 .container {
   font-family: inherit;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 85vh;
 }
 
 .navbar {
@@ -86,7 +91,7 @@ a {
   background-color: blue;
   border-radius: 8px;
   padding: 5px 10px;
-  height: 60vh;
+  height: 220px;
   width: 100px;
   font-size: small;
 }
@@ -120,4 +125,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#map {
+  height: 120px;
+  width: 120px;
+
 }
