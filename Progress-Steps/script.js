@@ -30,7 +30,10 @@ function update() {
 
     //Distance between one circle to another is 33% width
     progress.style.width = (curr - 1) * 33 + '%'
-    let disabled = true
-    curr > 1 ? disabled = false : true
-    prev.disabled = disabled
+    let disabled_prev = true
+    let disabled_next = false
+    curr > 1 ? disabled_prev = false : true
+    curr == 4 ? disabled_next = true : false
+    prev.disabled = disabled_prev
+    next.disabled = disabled_next
 }
