@@ -1,8 +1,8 @@
-export default function Greet(props) {
+export default function Greet({ name, onNameChange }) {
     return (<>
     <label htmlFor='name' >Your name: </label>      <br />
-    <input type='text' value={props.name} onChange={props.onNameChange}
+    <input type='text' value={name} onChange={onNameChange}
     autoFocus />
-    <p>Hi {props.name}!</p>
+    <p>Hi {name}!</p>
     </>)
 }
